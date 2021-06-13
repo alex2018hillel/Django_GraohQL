@@ -1,1 +1,1 @@
-# Django_GraohQL
+# Django_GraphQL
