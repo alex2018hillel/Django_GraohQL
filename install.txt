@@ -1,0 +1,73 @@
+python -m venv env
+.\env\Scripts\activate
+//E:\WORK_i5\!Python!\Django_GraphQL\env\Scripts\activate.bat
+
+pipenv shell --python 3.6 #?????????????????
+pip install virtualenv
+pip install django
+pip install graphene_django
+django-admin.py startproject django_graphql_movies .
+cd django_graphql_movies
+django-admin.py startapp movies
+python manage.py migrate
+--------------------------------
+python manage.py makemigrations
+python manage.py migrate
+--------------------------------
+python manage.py loaddata movies.json
+
+
+
+query getActors {
+  actors {
+    id
+    name
+  }
+  movie(id: 1) {
+    id
+    title
+    actors {
+      id
+      name
+    }
+  }
+  movies {
+    id
+    title
+  }
+}
+........................
+mutation createActor {
+  createActor(input: {
+    name: "Tom Hanks"
+  }) {
+    ok
+    actor {
+      id
+      name
+    }
+  }
+}
+.....................
+mutation createMovie {
+  createMovie(input: {
+    title: "Cast Away",
+    actors: [
+      {
+        id: 3
+      }
+    ]
+    year: 1999
+  }) {
+    ok
+    movie{
+      id
+      title
+      actors {
+        id
+        name
+      }
+      year
+    }
+  }
+}
