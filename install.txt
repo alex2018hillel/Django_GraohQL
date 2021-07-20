@@ -4,6 +4,11 @@ python -m venv env
 
 pipenv shell --python 3.6 #?????????????????
 pip install virtualenv
+----------------------------
+virtualenv venv
+source venv/bin/activate
+venv\Scripts\activate.bat (Windows)
+----------------------------
 pip install django
 pip install graphene_django
 django-admin.py startproject django_graphql_movies .
@@ -15,8 +20,9 @@ python manage.py makemigrations
 python manage.py migrate
 --------------------------------
 python manage.py loaddata movies.json
-
-
+pip freeze > requirements.txt
+--------------------------------
+python manage.py runserver
 
 query getActors {
   actors {
