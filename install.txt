@@ -1,6 +1,6 @@
 python -m venv env
 .\env\Scripts\activate
-//E:\WORK_i5\!Python!\Django_GraphQL\env\Scripts\activate.bat
+////E:\WORK_i5\!Python!\Django_GraphQL\env\Scripts\activate.bat
 
 pipenv shell --python 3.6 #?????????????????
 pip install virtualenv
